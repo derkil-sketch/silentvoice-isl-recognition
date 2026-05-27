@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Uses only RelativeLayout — no ConstraintLayout attributes.
+    Fixes: layout_constraintVerticalBias not found (AGP 8.1.0 bug)
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080C14">
+ 
+    <!-- Status text — top centre -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:text="Initialising..."
+        android:textColor="#4A90D9"
+        android:textSize="11sp"
+        android:letterSpacing="0.1"
+        android:fontFamily="monospace"/>
+ 
+    <!-- Glow circle — centred slightly above middle -->
+    <View
+        android:id="@+id/glowCircle"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/glow_circle"
+        android:alpha="0.35"/>
+ 
+    <!-- THE prediction word — centred, slightly above middle -->
+    <TextView
+        android:id="@+id/tvPrediction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="80dp"
+        android:layout_marginHorizontal="24dp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="--"
+        android:textColor="#FFFFFF"
+        android:textSize="80sp"
+        android:textStyle="bold"/>
+ 
+    <!-- Bottom button row — pinned to bottom -->
+    <LinearLayout
+        android:id="@+id/btnRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="44dp"
+        android:layout_marginHorizontal="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+ 
+        <!-- Connect / Disconnect -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConnect"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="Connect"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            app:backgroundTint="#1A2F50"
+            app:cornerRadius="26dp"
+            app:strokeColor="#2A4A80"
+            app:strokeWidth="1dp"/>
+ 
+        <!-- Speak -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSpeak"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="8dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="0dp"
+            android:text="&#128266;"
+            android:textSize="20sp"
+            app:backgroundTint="#1A2F50"
+            app:cornerRadius="26dp"/>
+ 
+        <!-- Details -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDetails"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:text="Details"
+            android:textColor="#6A8CB6"
+            android:textSize="13sp"
+            app:backgroundTint="#0D1828"
+            app:cornerRadius="26dp"
+            app:strokeColor="#1A3050"
+            app:strokeWidth="1dp"/>
+ 
+    </LinearLayout>
+ 
+</RelativeLayout>
+

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#080C14">
+ 
+    <!-- Top bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:background="#0D1520">
+ 
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#7A9CC6"
+            android:contentDescription="Back"/>
+ 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sensor Details"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+ 
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+ 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+ 
+            <!-- Sensor values card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#0D1520"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+ 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LIVE SENSOR VALUES"
+                        android:textColor="#4A90D9"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.15"
+                        android:layout_marginBottom="12dp"/>
+ 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+ 
+                        <TextView android:id="@+id/tvThumb"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Thumb\n--"
+                            android:textColor="#FF6B6B"
+                            android:textSize="12sp"
+                            android:gravity="center"
+                            android:fontFamily="monospace"/>
+ 
+                        <TextView android:id="@+id/tvIndex"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Index\n--"
+                            android:textColor="#4ECDC4"
+                            android:textSize="12sp"
+                            android:gravity="center"
+                            android:fontFamily="monospace"/>
+ 
+                        <TextView android:id="@+id/tvMiddle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Middle\n--"
+                            android:textColor="#45B7D1"
+                            android:textSize="12sp"
+                            android:gravity="center"
+                            android:fontFamily="monospace"/>
+ 
+                        <TextView android:id="@+id/tvRing"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ring\n--"
+                            android:textColor="#96CEB4"
+                            android:textSize="12sp"
+                            android:gravity="center"
+                            android:fontFamily="monospace"/>
+ 
+                        <TextView android:id="@+id/tvLittle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Little\n--"
+                            android:textColor="#FFEAA7"
+                            android:textSize="12sp"
+                            android:gravity="center"
+                            android:fontFamily="monospace"/>
+ 
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+ 
+            <!-- Chart card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#0D1520"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+ 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SIGNAL CHART"
+                        android:textColor="#4A90D9"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.15"
+                        android:layout_marginBottom="8dp"/>
+ 
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+ 
+            <!-- Log card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#0D1520"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+ 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SERIAL LOG (last 20 lines)"
+                        android:textColor="#4A90D9"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.15"
+                        android:layout_marginBottom="8dp"/>
+ 
+                    <TextView
+                        android:id="@+id/tvLog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:textColor="#5A7A9A"
+                        android:textSize="11sp"
+                        android:fontFamily="monospace"
+                        android:lineSpacingMultiplier="1.4"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+ 
+        </LinearLayout>
+    </ScrollView>
+ 
+</LinearLayout>
+

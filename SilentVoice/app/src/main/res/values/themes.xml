@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.SilentVoice" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#1A2F50</item>
+        <item name="colorPrimaryVariant">#0D1828</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#4A90D9</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="android:windowBackground">#080C14</item>
+        <item name="android:statusBarColor">#080C14</item>
+        <item name="android:navigationBarColor">#080C14</item>
+    </style>
+</resources>

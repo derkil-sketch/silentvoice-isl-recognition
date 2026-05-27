@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CP210x — most common ESP32 USB chip -->
+    <usb-device vendor-id="4292" product-id="60000"/>
+    <!-- CH340 — another common ESP32 USB chip -->
+    <usb-device vendor-id="1A86" product-id="7523"/>
+    <!-- FTDI — less common but possible -->
+    <usb-device vendor-id="1027" product-id="24577"/>
+    <!-- Catch-all — allows any USB device (safest for dev) -->
+    <usb-device />
+</resources>
